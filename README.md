@@ -27,12 +27,20 @@ Each dataset had formatting issues, null values, and inconsistencies that were a
 ### 1. AWS Billing Review
 Started by checking the AWS Billing Dashboard to review service usage and costs from the previous week. This helped understand how resources were being consumed and how to manage them more efficiently going forward.
 
+**Billing Screenshot**  
+![Billing Dashboard](billing.jpg)
+
 ### 2. S3 Bucket Setup
 Created a new S3 bucket named `finance-cln-sahl`. Two main folders were added:
 - `system/` – for internal datasets used by backend systems
 - `user/` – for datasets used by end users or teams
 
 This folder structure helped organize the outputs from each dataset type.
+
+**S3 Folder Structure**  
+- Historical Budget: ![S3 Hist](s3-hist.jpg)  
+- Department Expenses: ![S3 Dept](s3-dept.jpg)  
+- Revenue Streams: ![S3 Revenue](s3-revenue.jpg)
 
 ### 3. Glue DataBrew Projects
 Set up separate DataBrew projects for each dataset:
@@ -45,6 +53,11 @@ Each project allowed for visual data exploration and cleaning without writing co
 - Fixing column formats
 - Applying consistent field naming
 
+**DataBrew Interface Screenshots**  
+- Historical Budget: ![Glue Hist](gdb-hist.jpg)  
+- Department Expenses: ![Glue Dept](gdb-dpt.jpg)  
+- Revenue Streams: ![Glue Revenue](gdb-revenue.jpg)
+
 ### 4. Running Data Cleaning Jobs
 After finalizing the cleaning steps (called "recipes" in Glue DataBrew), I ran the jobs. The cleaned outputs were automatically saved into the correct folders in the S3 bucket:
 - system/historical_budgets/
@@ -53,6 +66,9 @@ After finalizing the cleaning steps (called "recipes" in Glue DataBrew), I ran t
 - user/historical_budgets/
 - user/department_expenses/
 - user/revenue_streams/
+
+**Job Output Confirmation**  
+![Data Cleaning Run](DCR.jpg)
 
 ## Tools and Technologies
 
